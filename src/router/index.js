@@ -1,6 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import CategoriesView from "@/views/CategoriesView.vue";
+import ManageProducts from "@/views/Admin/ManageProducts.vue";
+import ManageUsers from "@/views/Admin/ManageUsers.vue";
+import ManageCategories from "@/views/Admin/ManageCategories.vue";
+import ManageUnits from "@/views/Admin/ManageUnits.vue";
+import ManageManagers from "@/views/Admin/ManageManagers.vue";
 
 Vue.use(VueRouter);
 
@@ -11,13 +17,34 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/category/:id",
+    name: "category",
+    component: CategoriesView,
+  },
+  {
+    path: "/manage/products",
+    name: "manage-products",
+    component: ManageProducts,
+  },
+  {
+    path: "/manage/users",
+    name: "manage-users",
+    component: ManageUsers,
+  },
+  {
+    path: "/manage/categories",
+    name: "manage-categories",
+    component: ManageCategories,
+  },
+  {
+    path: "/manage/units",
+    name: "manage-units",
+    component: ManageUnits,
+  },
+  {
+    path: "/manage/managers",
+    name: "manage-managers",
+    component: ManageManagers,
   },
 ];
 
